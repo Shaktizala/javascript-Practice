@@ -148,8 +148,26 @@
 // console.log(multiply(4,6))
 
 // so this will be easy using arrow functions
-var multiply = (x,y) => {return x * y};
-console.log(multiply(4,6))
+// var multiply = (x,y) => {return x * y};
+// console.log(multiply(4,6))
 
 // if there is single statement we can omit {}
 // and even if the one statement is return, than we can omit return i.e. (x,y) => x*y
+
+// Arrow function binds to the parent scope instead of the window scope 
+// function Person(name){
+//   this.name = name;
+//   setTimeout(function(){
+//     console. log(this);
+//  	},1000);
+// }
+// var p = new Person("chintan");
+
+// this will print window object, because it has window context by default, but if we use arrow function here, than it will not have default binding to window so it will take context of it's parent.
+// function Person(name){
+//     this.name = name;
+//     setTimeout(() => console.log(this),1000);
+// }
+// var p = new Person("chintan");
+
+// this will print the person object
